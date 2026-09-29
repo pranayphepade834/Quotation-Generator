@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical Quote Generator - Professional Technical Sales quotation system">
+  <title>Technical Quote Generator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app">
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="app-header" role="banner">
+    <div class="app-header__inner">
+      <button
+        class="app-header__menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="sidebar"
+        aria-expanded="false">
+        <span class="app-header__menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="app-header__brand">
+        <span class="app-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h4l2-7 4 14 2-7h6" />
+          </svg>
+        </span>
+        <span class="app-header__title">Technical Quote Generator</span>
+        <span class="app-header__subtitle">Technical Sales Suite</span>
+      </div>
+
+      <div class="app-header__actions">
+        <span class="app-header__badge" title="Phase 7 - Quote Preview &amp; PDF">Quotes</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="sidebar" role="navigation" aria-label="Primary">
+      <nav class="app-nav">
+        <p class="app-nav__group-label">Menu</p>
+        <ul class="app-nav__list">
+          <li class="app-nav__item is-active">
+            <a class="app-nav__link" href="#dashboard" data-nav-target="dashboard" data-view="dashboard">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#customers" data-view="customers">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#products" data-view="products">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#create-quote" data-view="create-quote">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+              <span>Create Quote</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#quote-preview" data-view="quote-preview">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span>Quote Preview</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#quote-history" data-view="quote-history">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              <span>Quote History</span>
+            </a>
+          </li>
+          <li class="app-nav__item">
+            <a class="app-nav__link" href="#settings" data-view="settings">
+              <svg class="app-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="app-sidebar__footer">
+        <span class="app-sidebar__version">v0.5.0 &middot; Phase 7: Quotes</span>
+      </div>
+    </aside>
+
+    <div class="app-sidebar__backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- Main content -->
+    <main class="app-main" id="main-content" role="main">
+      <!-- Dashboard view -->
+      <section class="app-view" id="view-dashboard" data-view-panel>
+        <div class="app-welcome">
+          <div>
+            <h1 class="app-welcome__title">Welcome to Technical Quote Generator</h1>
+            <p class="app-welcome__text">A professional quotation workspace for technical sales. This is the Phase 1 foundation with sample data.</p>
+          </div>
+          <button class="btn btn--primary" type="button" data-view-trigger-create>Create New Quote</button>
+        </div>
+
+        <section class="cards-grid" aria-label="Quote summary sample data">
+          <article class="stat-card">
+            <div class="stat-card__icon stat-card__icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="stat-card__body">
+              <p class="stat-card__label">Total Quotes</p>
+              <p class="stat-card__value" id="stat-total-quotes">--</p>
+            </div>
+            <span class="stat-card__badge">Sample Data</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon stat-card__icon--amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 8v4l3 3"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </div>
+            <div class="stat-card__body">
+              <p class="stat-card__label">Draft Quotes</p>
+              <p class="stat-card__value" id="stat-draft-quotes">--</p>
+            </div>
+            <span class="stat-card__badge">Sample Data</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon stat-card__icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="stat-card__body">
+              <p class="stat-card__label">Accepted Quotes</p>
+              <p class="stat-card__value" id="stat-accepted-quotes">--</p>
+            </div>
+            <span class="stat-card__badge">Sample Data</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon stat-card__icon--purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="stat-card__body">
+              <p class="stat-card__label">Total Quote Value</p>
+              <p class="stat-card__value" id="stat-total-value">--</p>
+            </div>
+            <span class="stat-card__badge">Sample Data</span>
+          </article>
+        </section>
+
+        <section class="app-panels">
+          <article class="panel">
+            <header class="panel__header">
+              <h2 class="panel__title">Recent Quotes</h2>
+              <span class="panel__note">Sample Data</span>
+            </header>
+            <div class="panel__body">
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Quote #</th>
+                      <th scope="col">Customer</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Value</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recent-quotes-body">
+                    <!-- Populated by app.js sample data -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <header class="panel__header">
+              <h2 class="panel__title">Sales Activity</h2>
+              <span class="panel__note">Placeholder</span>
+            </header>
+            <div class="panel__body">
+              <div class="chart-placeholder" role="img" aria-label="Sales activity chart placeholder">
+                <div class="chart-placeholder__bars">
+                  <span style="--bar:40%"></span>
+                  <span style="--bar:65%"></span>
+                  <span style="--bar:50%"></span>
+                  <span style="--bar:80%"></span>
+                  <span style="--bar:60%"></span>
+                  <span style="--bar:90%"></span>
+                  <span style="--bar:72%"></span>
+                </div>
+                <p class="chart-placeholder__label">Sales activity chart will be available in a later phase</p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Customers view -->
+      <section class="app-view is-hidden" id="view-customers" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Customers</h1>
+            <p class="page-header__text">Manage your customer accounts and contact information.</p>
+          </div>
+          <button class="btn btn--primary" type="button" id="add-customer-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add Customer
+          </button>
+        </header>
+
+        <!-- Customer count -->
+        <div class="customer-toolbar">
+          <p class="customer-count" id="customer-count" aria-live="polite">0 customers</p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-bar" role="search">
+          <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            class="search-bar__input"
+            id="customer-search"
+            type="search"
+            placeholder="Search by name, company, email or phone..."
+            autocomplete="off">
+        </div>
+
+        <!-- Customer table -->
+        <section class="panel panel--customers">
+          <div class="panel__body panel__body--flush">
+            <div class="table-wrap">
+              <table class="table customer-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Location</th>
+                    <th scope="col" class="table__col-actions">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="customer-table-body">
+                  <!-- Populated by app.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Empty states (toggle visibility in JS) -->
+            <div class="empty-state is-hidden" id="customers-empty-all">
+              <div class="empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h2 class="empty-state__title">No customers yet</h2>
+              <p class="empty-state__text">Add your first customer to start building your sales pipeline.</p>
+              <button class="btn btn--primary" type="button" data-empty-add>Add Customer</button>
+            </div>
+
+            <div class="empty-state is-hidden" id="customers-empty-search">
+              <div class="empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <h2 class="empty-state__title">No customers found</h2>
+              <p class="empty-state__text">Try adjusting your search or clear the search box.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Products view -->
+      <section class="app-view is-hidden" id="view-products" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Products</h1>
+            <p class="page-header__text">Manage your product catalog, pricing and tax configuration.</p>
+          </div>
+          <button class="btn btn--primary" type="button" id="add-product-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add Product
+          </button>
+        </header>
+
+        <!-- Product count -->
+        <div class="customer-toolbar">
+          <p class="customer-count" id="product-count" aria-live="polite">0 products</p>
+        </div>
+
+        <!-- Filters: search + category + status -->
+        <div class="filter-bar" role="search">
+          <div class="search-bar filter-bar__search">
+            <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              class="search-bar__input"
+              id="product-search"
+              type="search"
+              placeholder="Search by name, SKU, category or description..."
+              autocomplete="off">
+          </div>
+
+          <div class="filter-bar__controls">
+            <label class="filter-bar__field">
+              <span class="filter-bar__label">Status</span>
+              <select class="form-select" id="product-status-filter">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </label>
+            <label class="filter-bar__field">
+              <span class="filter-bar__label">Category</span>
+              <select class="form-select" id="product-category-filter">
+                <option value="all">All Categories</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- Product table -->
+        <section class="panel panel--customers">
+          <div class="panel__body panel__body--flush">
+            <div class="table-wrap">
+              <table class="table product-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Category</th>
+                    <th scope="col" class="table__col-num">Unit Price</th>
+                    <th scope="col" class="table__col-num">GST %</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="table__col-actions">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="product-table-body">
+                  <!-- Populated by app.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Empty states -->
+            <div class="empty-state is-hidden" id="products-empty-all">
+              <div class="empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h2 class="empty-state__title">No products yet</h2>
+              <p class="empty-state__text">Add your first product to build your technical catalog.</p>
+              <button class="btn btn--primary" type="button" data-product-empty-add>Add Product</button>
+            </div>
+
+            <div class="empty-state is-hidden" id="products-empty-filter">
+              <div class="empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <h2 class="empty-state__title">No products found</h2>
+              <p class="empty-state__text">Try adjusting your search or filters.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="app-view is-hidden" id="view-create-quote" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Create Quote</h1>
+            <p class="page-header__text">Build a professional technical quotation with products, pricing and tax.</p>
+          </div>
+        </header>
+
+        <form class="quote-builder" id="quote-form" novalidate>
+          <!-- 1. Customer -->
+          <section class="panel quote-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">1. Customer</h2>
+            </header>
+            <div class="panel__body">
+              <div class="form-field">
+                <label class="form-label" for="quote-customer">Select Customer <span class="form-label__required">*</span></label>
+                <select class="form-select" id="quote-customer">
+                  <option value="">Select a customer...</option>
+                </select>
+                <p class="form-error" id="error-quote-customer"></p>
+                <p class="quote-selected-customer" id="quote-selected-customer"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Details -->
+          <section class="panel quote-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">2. Quote Details</h2>
+            </header>
+            <div class="panel__body">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="quote-date">Quote Date <span class="form-label__required">*</span></label>
+                  <input class="form-input" type="date" id="quote-date">
+                  <p class="form-error" id="error-quote-date"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="quote-valid">Valid Until <span class="form-label__required">*</span></label>
+                  <input class="form-input" type="date" id="quote-valid">
+                  <p class="form-error" id="error-quote-valid"></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Line items -->
+          <section class="panel quote-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">3. Line Items</h2>
+              <button class="btn btn--ghost" type="button" id="add-line-btn">Add Line</button>
+            </header>
+            <div class="panel__body">
+              <div class="quote-lines" id="quote-lines">
+                <!-- line rows injected by JS -->
+              </div>
+              <p class="form-error" id="error-quote-lines"></p>
+            </div>
+          </section>
+
+          <!-- 4. Summary -->
+          <section class="panel quote-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">4. Summary</h2>
+            </header>
+            <div class="panel__body">
+              <div class="quote-summary" id="quote-summary">
+                <div class="quote-summary__row"><span>Subtotal</span><span id="summary-subtotal">&#8377; 0.00</span></div>
+                <div class="quote-summary__row"><span>Total Discount</span><span id="summary-discount">&#8377; 0.00</span></div>
+                <div class="quote-summary__row"><span>Tax (GST)</span><span id="summary-gst">&#8377; 0.00</span></div>
+                <div class="quote-summary__row quote-summary__row--total"><span>Grand Total</span><span id="summary-grand">&#8377; 0.00</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Notes & terms -->
+          <section class="panel quote-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">5. Notes &amp; Terms</h2>
+            </header>
+            <div class="panel__body">
+              <div class="form-field form-field--full">
+                <label class="form-label" for="quote-notes">Notes</label>
+                <textarea class="form-input form-input--textarea" id="quote-notes" rows="3" placeholder="Additional notes shown on the quotation..."></textarea>
+              </div>
+              <div class="form-field form-field--full">
+                <label class="form-label" for="quote-terms">Terms &amp; Conditions</label>
+                <textarea class="form-input form-input--textarea" id="quote-terms" rows="3" placeholder="e.g. Prices valid for 30 days. Delivery 2-3 weeks after order confirmation."></textarea>
+              </div>
+              <div class="form-field form-field--full">
+                <label class="form-label" for="quote-payment">Payment Terms</label>
+                <textarea class="form-input form-input--textarea" id="quote-payment" rows="2" placeholder="e.g. 50% advance, balance before dispatch."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <div class="quote-actions">
+            <button class="btn btn--primary" type="submit" id="save-quote-btn">Save &amp; Preview</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="app-view is-hidden" id="view-quote-preview" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Quote Preview</h1>
+            <p class="page-header__text">Review the professional A4 quotation before exporting.</p>
+          </div>
+        </header>
+
+        <div class="preview-toolbar">
+          <button class="btn btn--ghost" type="button" id="preview-back-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Edit
+          </button>
+          <div class="preview-toolbar__spacer"></div>
+          <button class="btn btn--ghost" type="button" id="print-quote-btn">Print Quote</button>
+          <button class="btn btn--primary" type="button" id="download-pdf-btn">Download PDF</button>
+        </div>
+
+        <div class="quote-doc" id="quote-doc">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="empty-state is-hidden" id="preview-empty">
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+          </div>
+          <h2 class="empty-state__title">No quote to preview</h2>
+          <p class="empty-state__text">Create a quote first, then preview and download it as a PDF.</p>
+          <button class="btn btn--primary" type="button" id="preview-to-create-btn" data-view-trigger-create>Create a Quote</button>
+        </div>
+      </section>
+
+      <section class="app-view is-hidden" id="view-quote-history" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Quote History</h1>
+            <p class="page-header__text">Browse, search and manage all your saved quotations.</p>
+          </div>
+        </header>
+
+        <div class="filter-bar">
+          <div class="search-bar filter-bar__search">
+            <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input class="search-bar__input" id="history-search" type="search" placeholder="Search by quote number, customer or company...">
+          </div>
+          <div class="filter-bar__controls">
+            <div class="filter-bar__field">
+              <label class="filter-bar__label" for="history-status">Status</label>
+              <select class="form-select" id="history-status">
+                <option value="">All Statuses</option>
+                <option value="draft">Draft</option>
+                <option value="sent">Sent</option>
+                <option value="pending">Pending</option>
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
+                <option value="expired">Expired</option>
+              </select>
+            </div>
+            <div class="filter-bar__field">
+              <label class="filter-bar__label" for="history-sort">Sort By</label>
+              <select class="form-select" id="history-sort">
+                <option value="date-desc">Quote Date (Newest)</option>
+                <option value="date-asc">Quote Date (Oldest)</option>
+                <option value="number-asc">Quote Number (A-Z)</option>
+                <option value="number-desc">Quote Number (Z-A)</option>
+                <option value="customer-asc">Customer (A-Z)</option>
+                <option value="customer-desc">Customer (Z-A)</option>
+                <option value="amount-desc">Total Amount (High-Low)</option>
+                <option value="amount-asc">Total Amount (Low-High)</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel--history">
+          <div class="panel__body panel__body--flush">
+            <div class="history-table-wrap">
+              <table class="table table--history" id="history-table">
+                <thead>
+                  <tr>
+                    <th class="table--right">Quote Number</th>
+                    <th>Customer</th>
+                    <th class="table--right">Quote Date</th>
+                    <th class="table--right">Valid Until</th>
+                    <th class="table--right">Total</th>
+                    <th>Status</th>
+                    <th class="table--right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="history-tbody"></tbody>
+              </table>
+            </div>
+            <div class="empty-state" id="history-empty">
+              <div class="empty-state__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <h2 class="empty-state__title" id="history-empty-title">No quotes yet</h2>
+              <p class="empty-state__text">Create your first quote to see it here.</p>
+              <button class="btn btn--primary" type="button" data-view-trigger-create>Create Your First Quote</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-view is-hidden" id="view-settings" data-view-panel>
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Settings</h1>
+            <p class="page-header__text">Company branding and quotation defaults used across the preview and PDF.</p>
+          </div>
+        </header>
+
+        <div class="settings" id="settings-root">
+          <div class="panel settings-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">Company Information</h2>
+            </header>
+            <div class="panel__body">
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-company-name">Company Name</label>
+                  <input class="form-input" type="text" id="set-company-name" autocomplete="organization">
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-company-address">Address</label>
+                  <input class="form-input" type="text" id="set-company-address" autocomplete="street-address">
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="set-company-city">City</label>
+                  <input class="form-input" type="text" id="set-company-city" autocomplete="address-level2">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-company-state">State</label>
+                  <input class="form-input" type="text" id="set-company-state" autocomplete="address-level1">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-company-country">Country</label>
+                  <input class="form-input" type="text" id="set-company-country" autocomplete="country-name">
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="set-company-phone">Phone</label>
+                  <input class="form-input" type="tel" id="set-company-phone" autocomplete="tel">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-company-email">Email</label>
+                  <input class="form-input" type="email" id="set-company-email" autocomplete="email">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-company-website">Website</label>
+                  <input class="form-input" type="text" id="set-company-website" autocomplete="url">
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-company-gst">GST / Tax Number</label>
+                  <input class="form-input" type="text" id="set-company-gst" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel settings-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">Company Logo</h2>
+            </header>
+            <div class="panel__body">
+              <p class="panel__note" style="margin-bottom: var(--space-4);">Used in the quotation preview and the downloaded PDF. Stored locally in your browser.</p>
+              <div class="settings-logo">
+                <div class="settings-logo__preview">
+                  <img id="set-logo-preview" alt="Company logo preview">
+                </div>
+                <div class="settings-logo__controls">
+                  <label class="btn btn--ghost" style="cursor:pointer;">
+                    Change Logo
+                    <input type="file" id="set-logo-input" accept="image/*" style="display:none;">
+                  </label>
+                  <button class="btn btn--ghost" type="button" id="set-logo-remove">Remove Logo</button>
+                </div>
+              </div>
+              <p class="form-error" id="error-settings-logo"></p>
+            </div>
+          </div>
+
+          <div class="panel settings-panel">
+            <header class="panel__header">
+              <h2 class="panel__title">Quote Defaults</h2>
+            </header>
+            <div class="panel__body">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="set-quote-validity">Quote validity period (days)</label>
+                  <input class="form-input" type="number" id="set-quote-validity" min="1" step="1" inputmode="numeric">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-currency">Currency</label>
+                  <select class="form-select" id="set-currency">
+                    <option value="INR">INR &#8377; (Indian Rupee)</option>
+                    <option value="USD">USD $ (US Dollar)</option>
+                    <option value="EUR">EUR &euro; (Euro)</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="set-default-gst">Default GST / tax rate (%)</label>
+                  <input class="form-input" type="number" id="set-default-gst" min="0" step="0.01" inputmode="decimal">
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-payment-terms">Payment Terms</label>
+                  <textarea class="form-input form-input--textarea" id="set-payment-terms" rows="2" placeholder="e.g. 50% advance, balance before dispatch."></textarea>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-default-notes">Default Notes</label>
+                  <textarea class="form-input form-input--textarea" id="set-default-notes" rows="3" placeholder="Default notes shown on each new quote..."></textarea>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="set-terms-conditions">Terms &amp; Conditions</label>
+                  <textarea class="form-input form-input--textarea" id="set-terms-conditions" rows="3" placeholder="Default terms shown on each new quote..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-actions">
+            <button class="btn btn--primary" type="button" id="settings-save-btn">Save Settings</button>
+            <button class="btn btn--ghost" type="button" id="settings-reset-btn">Reset to Defaults</button>
+            <p class="settings-feedback" id="settings-feedback" role="status"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer add/edit modal -->
+      <div class="modal" id="customer-modal" role="dialog" aria-modal="true" aria-labelledby="customer-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" role="document">
+          <header class="modal__header">
+            <h2 class="modal__title" id="customer-modal-title">Add Customer</h2>
+            <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </header>
+
+          <form class="customer-form" id="customer-form" novalidate>
+            <input type="hidden" id="customer-id">
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Contact Information</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="customer-name">Customer Name <span class="form-label__required">*</span></label>
+                  <input class="form-input" type="text" id="customer-name" autocomplete="organization" placeholder="e.g. Sarah Johnson">
+                  <p class="form-error" id="error-customer-name"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-company">Company</label>
+                  <input class="form-input" type="text" id="customer-company" autocomplete="organization" placeholder="e.g. Acme Machinery Inc.">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-contact">Contact Person</label>
+                  <input class="form-input" type="text" id="customer-contact" autocomplete="name" placeholder="e.g. Sarah Johnson">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-email">Email</label>
+                  <input class="form-input" type="email" id="customer-email" autocomplete="email" placeholder="e.g. sarah@acme.com">
+                  <p class="form-error" id="error-customer-email"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-phone">Phone</label>
+                  <input class="form-input" type="tel" id="customer-phone" autocomplete="tel" placeholder="e.g. +1 555 123 4567">
+                </div>
+              </div>
+            </div>
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Address</p>
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="customer-address">Address</label>
+                  <input class="form-input" type="text" id="customer-address" autocomplete="street-address" placeholder="e.g. 123 Industry Ave">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-city">City</label>
+                  <input class="form-input" type="text" id="customer-city" autocomplete="address-level2" placeholder="e.g. Houston">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-state">State</label>
+                  <input class="form-input" type="text" id="customer-state" autocomplete="address-level1" placeholder="e.g. TX">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="customer-country">Country</label>
+                  <input class="form-input" type="text" id="customer-country" autocomplete="country-name" placeholder="e.g. United States">
+                </div>
+              </div>
+            </div>
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Additional Information</p>
+              <div class="form-field form-field--full">
+                <label class="form-label" for="customer-notes">Notes</label>
+                <textarea class="form-input form-input--textarea" id="customer-notes" rows="3" placeholder="Internal notes about this customer..."></textarea>
+              </div>
+            </div>
+
+            <footer class="modal__footer">
+              <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+              <button class="btn btn--primary" type="submit" id="customer-form-submit">Save Customer</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+
+      <!-- Delete confirmation modal -->
+      <div class="modal modal--small" id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" role="document">
+          <header class="modal__header">
+            <h2 class="modal__title" id="delete-modal-title">Delete Customer</h2>
+            <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </header>
+          <div class="modal__body">
+            <p id="delete-customer-message">Are you sure you want to delete this customer? This action cannot be undone.</p>
+            <p class="delete-warning">Please confirm that you want to permanently remove this customer.</p>
+          </div>
+          <footer class="modal__footer">
+            <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+            <button class="btn btn--danger" type="button" id="delete-confirm-btn">Delete</button>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Product add/edit modal -->
+      <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" role="document">
+          <header class="modal__header">
+            <h2 class="modal__title" id="product-modal-title">Add Product</h2>
+            <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </header>
+
+          <form class="customer-form" id="product-form" novalidate>
+            <input type="hidden" id="product-id">
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Product Details</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="product-name">Product Name <span class="form-label__required">*</span></label>
+                  <input class="form-input" type="text" id="product-name" autocomplete="off" placeholder="e.g. Industrial Servo Motor 2kW">
+                  <p class="form-error" id="error-product-name"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="product-sku">SKU / Product Code</label>
+                  <input class="form-input" type="text" id="product-sku" autocomplete="off" placeholder="e.g. SM-2000">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="product-category">Category</label>
+                  <input class="form-input" type="text" id="product-category" data-category-input autocomplete="off" placeholder="e.g. Motors">
+                  <p class="form-error" id="error-product-category"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="product-unit">Unit</label>
+                  <input class="form-input" type="text" id="product-unit" autocomplete="off" placeholder="e.g. pcs, unit, meter">
+                </div>
+              </div>
+            </div>
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Pricing &amp; Tax</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="product-price">Unit Price <span class="form-label__required">*</span></label>
+                  <input class="form-input" type="number" id="product-price" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+                  <p class="form-error" id="error-product-price"></p>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="product-gst">GST / Tax %</label>
+                  <input class="form-input" type="number" id="product-gst" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 18">
+                  <p class="form-error" id="error-product-gst"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="customer-form__section">
+              <p class="customer-form__section-title">Details</p>
+              <div class="form-field form-field--full">
+                <label class="form-label" for="product-status">Status</label>
+                <select class="form-select" id="product-status">
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="form-field form-field--full">
+                <label class="form-label" for="product-description">Description</label>
+                <textarea class="form-input form-input--textarea" id="product-description" rows="3" placeholder="Product description / technical details..."></textarea>
+              </div>
+            </div>
+
+            <footer class="modal__footer">
+              <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+              <button class="btn btn--primary" type="submit" id="product-form-submit">Save Product</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+
+      <!-- Product delete confirmation modal -->
+      <div class="modal modal--small" id="product-delete-modal" role="dialog" aria-modal="true" aria-labelledby="product-delete-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" role="document">
+          <header class="modal__header">
+            <h2 class="modal__title" id="product-delete-modal-title">Delete Product</h2>
+            <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </header>
+          <div class="modal__body">
+            <p id="product-delete-message">Are you sure you want to delete this product? This action cannot be undone.</p>
+            <p class="delete-warning">Please confirm that you want to permanently remove this product.</p>
+          </div>
+          <footer class="modal__footer">
+            <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+            <button class="btn btn--danger" type="button" id="product-delete-confirm-btn">Delete</button>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Toast notifications -->
+      <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+      <footer class="app-footer">
+        <p>&copy; 2026 Technical Quote Generator &middot; Phase 7: Quotes</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Client-side PDF generation (free, open-source, loaded from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+  <!-- Embedded Noto Sans subset with Indian Rupee support (see js/fonts.js) -->
+  <script src="js/fonts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
