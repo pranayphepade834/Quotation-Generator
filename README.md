@@ -47,3 +47,26 @@ Quotation-Generator/
 │   └── company-details.png
 │
 └── README.md
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Customers
+![Customers](screenshots/customers.png)
+
+### Products
+![Products](screenshots/products.png)
+
+### Create Quote
+![Create Quote](screenshots/create-quote.png)
+
+### Quote History
+![Quote History](screenshots/quote-history.png)
+
+### Quote Preview
+![Quote Preview](screenshots/quote-preview.png)
+
+### Company Details
+![Company Details](screenshots/company-details.png)
