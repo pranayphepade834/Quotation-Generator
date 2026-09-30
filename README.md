@@ -49,24 +49,25 @@ Quotation-Generator/
 └── README.md
 
 ## 📸 Screenshots
+## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/Dashboard.png)
+<img src="screenshots/Dashboard.png" alt="Dashboard" width="900">
 
 ### Customers
-![Customers](screenshots/Customers.png)
+<img src="screenshots/Customers.png" alt="Customers" width="900">
 
 ### Products
-![Products](screenshots/Products.png)
+<img src="screenshots/Products.png" alt="Products" width="900">
 
 ### Create Quote
-![Create Quote](screenshots/Creat custom quote.png)
+<img src="screenshots/Creat%20custom%20quote.png" alt="Create Quote" width="900">
 
 ### Quote History
-![Quote History](screenshots/Quote History.png)
+<img src="screenshots/Quote%20History.png" alt="Quote History" width="900">
 
 ### Quote Preview
-![Quote Preview](screenshots/quote preview.png)
+<img src="screenshots/quote%20preview.png" alt="Quote Preview" width="900">
 
 ### Company Details
-![Company Details](screenshots/add company details.png)
+<img src="screenshots/add%20company%20details.png" alt="Company Details" width="900">
