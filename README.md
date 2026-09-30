@@ -49,7 +49,7 @@ quotation-generator/
 └── README.md
 ```
 
-## 📸 Overviwe
+## 📸 Overview
 
 ### Dashboard
 <img src="screenshots/Dashboard.png" alt="Dashboard" width="900">
