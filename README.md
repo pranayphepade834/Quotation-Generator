@@ -51,7 +51,7 @@ Quotation-Generator/
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ### Customers
 ![Customers](screenshots/customers.png)
