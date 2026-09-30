@@ -54,19 +54,19 @@ Quotation-Generator/
 ![Dashboard](screenshots/Dashboard.png)
 
 ### Customers
-![Customers](screenshots/customers.png)
+![Customers](screenshots/Customers.png)
 
 ### Products
-![Products](screenshots/products.png)
+![Products](screenshots/Products.png)
 
 ### Create Quote
-![Create Quote](screenshots/create-quote.png)
+![Create Quote](screenshots/Creat custom quote.png)
 
 ### Quote History
-![Quote History](screenshots/quote-history.png)
+![Quote History](screenshots/Quote History.png)
 
 ### Quote Preview
-![Quote Preview](screenshots/quote-preview.png)
+![Quote Preview](screenshots/quote preview.png)
 
 ### Company Details
-![Company Details](screenshots/company-details.png)
+![Company Details](screenshots/add company details.png)
