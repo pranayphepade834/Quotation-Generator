@@ -52,22 +52,22 @@ quotation-generator/
 ## 📸 Screenshots
 
 ### Dashboard
-<img src="screenshots/dashboard.png" alt="Dashboard" width="900">
+<img src="screenshots/Dashboard.png" alt="Dashboard" width="900">
 
 ### Customers
-<img src="screenshots/customers.png" alt="Customers" width="900">
+<img src="screenshots/Customers.png" alt="Customers" width="900">
 
 ### Products
-<img src="screenshots/products.png" alt="Products" width="900">
+<img src="screenshots/Products.png" alt="Products" width="900">
 
 ### Create Quote
-<img src="screenshots/create-quote.png" alt="Create Quote" width="900">
+<img src="screenshots/Creat%20custom%20quote.png" alt="Create Quote" width="900">
 
 ### Quote History
-<img src="screenshots/quote-history.png" alt="Quote History" width="900">
+<img src="screenshots/Quote%20History.png" alt="Quote History" width="900">
 
 ### Quote Preview
-<img src="screenshots/quote-preview.png" alt="Quote Preview" width="900">
+<img src="screenshots/quote%20preview.png" alt="Quote Preview" width="900">
 
 ### Company Details
-<img src="screenshots/company-details.png" alt="Company Details" width="900">
+<img src="screenshots/add%20company%20details.png" alt="Company Details" width="900">
